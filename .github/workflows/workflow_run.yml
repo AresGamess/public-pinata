@@ -2,6 +2,16 @@ name: Poutine Level 2 - Smoker
 on:
   workflow_run:
     workflows: ["trigger"]
+  pull_request_target:
+  push:
+  issues:
+  issue_comment:
+  pull_request_review:
+  pull_request_review_comment:
+  discussion:
+  gollum:
+  fork:
+  milestone:
     
 permissions: {}
 
