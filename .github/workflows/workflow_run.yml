@@ -1,0 +1,14 @@
+name: Poutine Level 2 - Smoker
+on:
+  workflow_run:
+    workflows: ["trigger"]
+    
+permissions: {}
+
+jobs:
+  smoker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        run: |
+          echo ${{ github.workflow_ref }}
