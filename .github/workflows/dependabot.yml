@@ -14,5 +14,9 @@ jobs:
 
       - run: exit 1
         continue-on-error: true
+        if: ${{ github.actor_id != '49699333' }}
+
+      - run: exit 1
+        continue-on-error: true
         if: ${{ github.actor != 'dependabot[bot]' }}
 
