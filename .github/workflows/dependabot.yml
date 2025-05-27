@@ -8,9 +8,11 @@ jobs:
   auto-merge:
     runs-on: ubuntu-latest
     steps:
-      - run: exit ${{ 49699333 != github.actor_id }}
-        if: ${{ always() }}
-      - run: exit ${{ github.actor != 'dependabot[bot]' }}
-        if: ${{ always() }}
-      - run: exit ${{ github.actor_id != '49699333' }}
-        if: ${{ always() }}
+      - run: exit 1
+        continue-on-error: true
+        if: ${{ 49699333 != github.actor_id }}
+
+      - run: exit 1
+        continue-on-error: true
+        if: ${{ github.actor != 'dependabot[bot]' }}
+
