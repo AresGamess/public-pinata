@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: Event
         env:
-          WORKFLOW_NAME: ${{ github.workflow.name }}
+          WORKFLOW_NAME: ${{ github.event.workflow.name }}
         run: echo "$WORKFLOW_NAME"
       - name: Dump GitHub context
         env:
