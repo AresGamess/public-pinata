@@ -12,6 +12,10 @@ jobs:
         continue-on-error: true
         if: ${{ 49699333 != github.actor_id }}
 
+      - run: exit 0
+        continue-on-error: true
+        if: ${{ 49699333 == github.actor_id }}
+        
       - run: exit 1
         continue-on-error: true
         if: ${{ github.actor_id != '49699333' }}
