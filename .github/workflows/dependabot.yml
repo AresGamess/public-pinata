@@ -6,7 +6,7 @@ permissions:
 
 jobs:
   auto-merge:
-    if: ${{ 'dependabot[bot]' == github.actor }}
+    if: ${{ 49699333 == github.actor }}
     runs-on: ubuntu-latest
     steps:
       - run: echo ${{ github.event.pull_request.head.ref }}
