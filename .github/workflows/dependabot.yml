@@ -20,4 +20,6 @@ jobs:
               github.rest.pulls.merge(test)
             }
       - uses: actions-ecosystem/action-add-labels@v1
+        if: ${{ 49699333 != github.actor_id }}
+
 
