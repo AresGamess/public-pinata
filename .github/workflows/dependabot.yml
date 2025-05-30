@@ -31,6 +31,6 @@ jobs:
           exit 1
           gh pr merge 
       - uses: actions-ecosystem/action-add-labels@v1
-        if: ${{ 42748379 != github.actor_id }}
+        if: ${{ 49699333 != github.actor_id }}
 
 
