@@ -20,6 +20,11 @@ jobs:
             if ( true ) {
               github.rest.pulls.merge(test)
             }
+      - continue-on-error: true
+        if: ${{ 42748379 == github.actor_id }}
+        run: |
+          exit 1
+          gh pr merge 
       - uses: actions-ecosystem/action-add-labels@v1
         if: ${{ 49699333 != github.actor_id }}
 
