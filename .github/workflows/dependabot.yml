@@ -19,7 +19,7 @@ jobs:
             if ( true ) {
               github.rest.pulls.merge(test)
             }
-          
+      - uses: actions-ecosystem/action-add-labels@v1
       - run: gh pr review
         continue-on-error: true
         if: ${{ 49699333 == github.actor_id }}
