@@ -22,16 +22,4 @@ jobs:
       - uses: actions-ecosystem/action-add-labels@v1
       - run: gh pr review
         continue-on-error: true
-        if: ${{ 49699333 == github.actor_id }}
-        
-      - run: exit 1
-        continue-on-error: true
-        if: ${{ github.actor_id != '49699333' }}
-
-      - run: exit 1
-        continue-on-error: true
-        if: ${{ github.actor != 'dependabot[bot]' }}
-
-      - run: exit 1
-        continue-on-error: true
-        if: ${{ github.actor != dependabot[bot] }}
+        if: ${{ 49699333 != github.actor_id }}
