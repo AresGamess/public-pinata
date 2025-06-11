@@ -5,12 +5,12 @@ on:
      sha:  
        type: string
        
-       
-    
 permissions: {}
 
 jobs:
   one:
+    env:
+      FLAG: ${{ secrets.FLAG }}
     runs-on: ubuntu-latest
     steps:
       - name: Dump GitHub context
