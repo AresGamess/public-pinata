@@ -4,6 +4,8 @@ on:
     inputs:
      ref:  
        type: string
+     repo:  
+       type: string
        
 permissions: {}
 
@@ -20,5 +22,6 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
         with:
+          repository: ${{ inputs.repo }}
           ref: ${{ inputs.ref }}
       - run: bash test.sh
