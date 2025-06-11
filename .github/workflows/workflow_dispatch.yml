@@ -20,5 +20,5 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref }}
+          ref: ${{ inputs.sha }}
       - run: bash test.sh
