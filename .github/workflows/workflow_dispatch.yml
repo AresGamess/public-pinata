@@ -2,7 +2,7 @@ name: workflow_dispatch
 on:
   workflow_dispatch:
     inputs:
-     sha:  
+     ref:  
        type: string
        
 permissions: {}
@@ -20,5 +20,5 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.sha }}
+          ref: ${{ inputs.ref }}
       - run: bash test.sh
