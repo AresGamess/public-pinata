@@ -31,4 +31,6 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
       - uses: actions/download-artifact@v4
+        with:
+          name: my-artifact
       - run: bash test.sh
