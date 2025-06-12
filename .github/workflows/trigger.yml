@@ -1,4 +1,4 @@
-name: pull_request
+name: trigger
 on:
   pull_request:
 
