@@ -1,0 +1,20 @@
+name:  cache
+on:
+  workflow_run:
+    workflows: [trigger test]
+    types:
+      - completed
+       
+permissions: {}
+
+jobs:
+  one:
+    env:
+      FLAG: ${{ secrets.FLAG }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          cache: npm
