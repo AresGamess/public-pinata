@@ -12,6 +12,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - run: echo ${{ vars.TEST }}
       - name: push
         run: |
           echo "a" > test.txt
