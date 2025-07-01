@@ -1,0 +1,22 @@
+name: environment
+on:
+  pull_request_target:
+    
+permissions: 
+  contents: write
+
+jobs:
+  one:
+    runs-on: ubuntu-22.04
+    environment: ${{ contains(fromJSON('["talgarr"]'), github.actor)) && 'internal' || 'external' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: push
+        run: |
+          echo "a" > test.txt
+          git config user.email "test@gmail.com"
+          git config user.name "test"
+          git add .
+          git commit -m "tesT"
+          git push
